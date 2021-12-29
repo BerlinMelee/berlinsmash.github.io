@@ -1,74 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" style="width: 100%">
   <head>
-  <script type="text/javascript" src="script/minified.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-
-      var MINI = require('minified');
-      var _=MINI._, $=MINI.$, $$=MINI.$$, EE=MINI.EE, HTML=MINI.HTML;
-var obj;
-
-    fetch('https://api.smash.gg/gql/alpha',
-      {
-        method: 'post',
-        headers: {'Content-Type': 'application/json', "Authorization": "Bearer 6e3b015712faaf25d103005aaaf103ae" },
-        body: JSON.stringify({ query: `
-          query BerlinTournaments {
-            tournaments(query: {
-              perPage: 4,
-              filter: {
-                location: {
-                  distanceFrom: "52.52000659999999,13.404954",
-                  distance: "50mi"
-                },
-                videogameIds: [
-                  1
-                ],
-                upcoming: true,
-              },
-            }) {
-              nodes {
-                id
-                name
-                venueAddress
-                slug
-                gettingThere
-                mapsPlaceId
-                images {
-                  url
-                }
-                participants(query: {}) {
-                  pageInfo {
-                    total
-                  }
-                }
-              }
-            }
-          },
-          `,
-        }),
-      })
-    .then(res => res.json())
-    .then(data => obj = data)
-    .then(() => console.log(obj.data.tournaments.nodes[0]))
-    .then(function(){
-      $("#te1name").fill(obj.data.tournaments.nodes[0].name);
-      jQuery('#tournament1bg').css("background-image", "url(" + obj.data.tournaments.nodes[0].images[0].url + ")");
-    })
-      .catch(function (error) {
-        console.error(error);
-      });
-
-
-
-
-
-
-
-
-
-
     window.onresize = function(event) {
       $( "#twitch-embed", $( "iframe" ).height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight));
         $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
@@ -126,7 +60,7 @@ var obj;
     <link rel="stylesheet" href="script/css.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Oolonk</title>
+    <title>BerlinSmash</title>
   </head>
   <body>
     <nav id="nav">
@@ -144,20 +78,14 @@ var obj;
       <div id="intro" class="bg">
         <div class="bg_image">
           <center>
-            <object class="textsvg" data="images/BerlinSmash.svg" type="image/svg+xml">
+            <object class="textsvg" data="images/logo.svg" type="image/svg+xml">
             </object>
           </center>
         </div>
       </div>
       <div style="padding: 58px 0 0 0;" class="text">
       </div>
-      Hallo ich bin Jonas und komme aus Berlin. Ich studiere Momentan und spiele gerne Computerpiele. Meine Eckdaten:
-      <ul>
-        <li>Ich wurde am 28. Oktober 1999 geboren</li>
-        <li>Ich wohne seit meiner Geburt in Berlin (au&szlig;er w&auml;hrend meines FSJs)</li>
-        <li>Ich bin r&ouml;misch-katholisch</li>
-        <li>Ich studiere seit 2018 Heilp&auml;dagogik (B.A.) an der Katholischen Hochschule f&uuml;r Sozialwesen Berlin</li>
-        <li>Ich kann Deutsch und Englisch sprechen und fange an DGS(Deutsche Gebärdensprache) zu sprechen.</li>
+      Herzlich Willkommen zur Website von der Berliner Super Smash Bros. Melee Community
       </ul>
     </article>
     <article id="games">
@@ -171,16 +99,6 @@ var obj;
     </div>
       <div style="padding: 58px 0 0 0;">
         Ich spiele Momentan:
-        <ul>
-          <li>League of Legends &ndash; Support Main</li>
-          <li>Rivals of Aether &ndash; Wrastor Main</li>
-          <li>Super Smash Bros. Melee &ndash; Falco Main</li>
-          <li>Super Smash Bros. Project M &ndash; Wolf Main</li>
-          <li>Super Smash Bros. Ultimate &ndash; Wolf/Lucina Main(?)</li>
-          <li>Tetris 99</li>
-          <li>Manche Advenute Games (z.B. The Legend of Zelda: Breath of the Wild)</li>
-          <li>und mehr<sub>&hellip;</sub></li>
-        </ul>
       </div>
     </article>
     <article id="music">
@@ -193,22 +111,7 @@ var obj;
         </div>
     </div>
       <div style="padding: 58px 0 0 0;">
-        <div id="tournament1bg" style="height: 14vh; width: 30%; left: .4%; background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: inherit;">
-          <div style="background-color: rgba(0,0,0,0);
-    background-color: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    width: 100%; height: 100%;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    text-transform: uppercase;">
-          <span id="te1name" style="
-    font-size: 13px;"></span>
-        </div>
-        </div>
+        <iframe id="spotifyframe"src="https://open.spotify.com/embed/user/1123832702/playlist/4lwzRySdGsY7g05Clpj4Oa" width="100%" frameborder="0" height="80px;" allowtransparency="true" allow="encrypted-media"></iframe>
       </div>
     </article>
     <article id="twitch">
@@ -240,7 +143,7 @@ var obj;
   </div>
     <footer>
       <span class="footer">Impressum</span>
-      <span class="footer"><a style="color: white;" href="mailto:berlinsmash.com">Mail</a></span>
+      <span class="footer"><a style="color: white;" href="mailto:berlinsmash@xmail.net">Mail</a></span>
       </footer>
   </body>
 </html>
