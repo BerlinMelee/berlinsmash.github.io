@@ -4,16 +4,7 @@
     flex-direction: column;
   }
 }
-
-@font-face {
-  font-family: font;
-  font-weight: normal;
-  src: url('font.eot'); /* IE9 Compat Modes */
-  src: url('font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('font.woff') format('woff'), /* Pretty Modern Browsers */
-       url('font.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('font.svg#svgFontName') format('svg');
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 ::-webkit-scrollbar {
     width: .5em;
 }
@@ -27,11 +18,11 @@
   outline: 1px solid black;
 }
 body{
-  font-family: font !important;
+  font-family: 'Rubik', sans-serif;
   margin: 0 0 0 0;
   background-color: #18181b;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
 }
 #articles{
   min-height: calc(100vh - 33px);
@@ -117,7 +108,7 @@ area{
     color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
     background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
     line-height: 36px;
     overflow: hidden;
