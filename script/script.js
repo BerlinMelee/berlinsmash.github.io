@@ -67,3 +67,12 @@ window.onresize = function(event) {
       } // End if
     });
   });
+//Scroll of the navbar
+jQuery("#buttondiv").draggable({
+    cursor: "move",
+    containment: "parent",
+    stop: function() {
+      if(jQuery("#buttondiv").position().left < 1)
+          jQuery("#buttondiv").css("left", "720px");
+    }
+});

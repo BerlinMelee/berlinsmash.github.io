@@ -14,7 +14,7 @@
 
   ::-webkit-scrollbar-thumb {
     background-color: #090a0b;
-    outline: 1px solid white;
+    outline: 1px solid #e21c00;
   }
   .bgname{
     text-shadow: 5px 5px 0px #000000;
@@ -32,10 +32,14 @@
     color: white;
   }
   footer a{
-  color: black;
+  color: white;
   }
   .spacer{
     background: black;
+  }
+  .button{
+    background-color: rgba(0, 0, 0, .5);
+    color: #e20500;
   }
 }
 /*Light Mode*/
@@ -53,7 +57,7 @@
 
   ::-webkit-scrollbar-thumb {
     background-color: #f6f5f4;
-    outline: 1px solid black;
+    outline: 1px solid #e21c00;
   }
   .bgname{
     text-shadow: 5px 5px 0px #ffffff;
@@ -75,6 +79,10 @@
   }
   .spacer{
     background: white;
+  }
+  .button{
+    background-color: rgba(255, 255, 255, .5);
+    color: #e20500;
   }
 }
 
@@ -185,8 +193,6 @@ area{
     text-align: center;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
-    background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     font-size: 14px;
     font-weight: 500;
@@ -195,6 +201,7 @@ area{
     outline: none;
     cursor: pointer;
     transition: box-shadow 0.2s;
+    font-family: univers;
 }
 
 .button::-moz-focus-inner {
@@ -281,14 +288,19 @@ footer{
 
 }
 .bgname{
-font-family: univers;
-font-size: min(12vw, 100px);
-text-transform: uppercase;
-color: #e20500;
-
-    width: fit-content;
-    height: fit-content;
-    line-height: min(12vw, 100px);
+  font-family: univers;
+  font-size: min(12vw, 100px);
+  text-transform: uppercase;
+  color: #e20500;
+  width: fit-content;
+  height: fit-content;
+  line-height: min(12vw, 100px);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 h1{
   margin: 0 0 0 0;
@@ -300,4 +312,13 @@ h1{
 .spacer{
   width: 1px;
   margin-right: 3px;
+}
+#buttondiv{
+  width: calc(100vw - 64px);
+  overflow-x: auto;
+  overflow-y:hidden;
+  white-space: nowrap;
+}
+#buttondiv::-webkit-scrollbar {
+  display: none;
 }
