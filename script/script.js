@@ -15,8 +15,8 @@ function callbackFunc() {
   if (isElementInViewport(elements[i])) {
  elements[i].classList.add("visible");
 }
-
-
+}
+}
 window.onresize = function(event) {
   $( "#twitch-embed", $( "iframe" ).height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight));
     $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
