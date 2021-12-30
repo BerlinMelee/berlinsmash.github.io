@@ -2,57 +2,9 @@
 <html lang="en" dir="ltr" style="width: 100%">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script/script.js">
+    </script>
     <script>
-    window.onresize = function(event) {
-      $( "#twitch-embed", $( "iframe" ).height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight));
-        $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
-        $( "#spotifyframe").height("80px");
-    };
-
-
-      $(document).ready(function(){
-        $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
-        // Add smooth scrolling to all links
-        $("a").on('click', function(event) {
-
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-
-            // Store hash
-            var hash = this.hash;
-
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 800, function(){
-
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
-          } // End if
-        });
-        // Add smooth scrolling to all links
-        $("area").on('click', function(event) {
-          // Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
-            // Prevent default anchor click behavior
-            event.preventDefault();
-            // Store hash
-            var hash = this.hash;
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 800, function(){
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
-          } // End if
-        });
-      });
     </script>
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="mask-icon" href="images/logo.svg" color="blue">
@@ -77,7 +29,9 @@
       <div id="intro" class="bg">
         <div class="bg_image">
           <center>
-            <object class="textsvg" data="images/berlinsmash.svg" type="image/svg+xml">
+            <div class="bgname">
+              BerlinSmash
+            </div>
             </object>
           </center>
         </div>
@@ -92,12 +46,13 @@
       <div id="musicbg" class="bg">
         <div class="bg_image">
           <center>
-            <object class="textsvg" data="images/Links.svg" type="image/svg+xml">
-            </object>
+            <div class="bgname">
+              Links
+            </div>
           </center>
         </div>
     </div>
-      <div style="padding: 58px 0 0 0;">
+      <div class="text" style="padding: 58px 0 0 0;">
         lorem ipsum solor dolit
       </div>
     </article>
@@ -105,8 +60,9 @@
       <div id="twitchbg" class="bg">
         <div class="bg_image">
           <center>
-            <object class="textsvg" data="images/Twitch.svg" type="image/svg+xml">
-            </object>
+            <div class="bgname">
+              Twitch
+            </div>
           </center>
         </div>
     </div>
@@ -114,22 +70,23 @@
     <div id="twitch-embed"></div>
 
     <!-- Load the Twitch embed script -->
-    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
     <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
     <script type="text/javascript">
-      var embed = new Twitch.Embed("twitch-embed", {
-        width: '100%',
-        height: document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight,
-        channel: "berlinsmash",
-        autoplay: true
-      });
+        var embed = new Twitch.Embed("twitch-embed", {
+          width: '100%',
+          height: document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight,
+          channel: "berlinsmash",
+          autoplay: true
+        });
     </script>
     </article>
   </div>
     <footer>
       <span class="footer">Impressum</span>
-      <span class="footer"><a style="color: white;" href="mailto:berlinsmash@xmail.net">Mail</a></span>
+      <span class="footer"><a style="color: white;" href="mailto:berlin.melee@gmail.com">Mail</a></span>
       </footer>
   </body>
 </html>

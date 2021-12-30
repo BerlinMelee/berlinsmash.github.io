@@ -4,6 +4,10 @@
     flex-direction: column;
   }
 }
+@font-face {
+  font-family: univers;
+  src: url(univers.ttf);
+}
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 ::-webkit-scrollbar {
     width: .5em;
@@ -202,4 +206,11 @@ footer{
   min-height: 30px;
   color: white;
 
+}
+.bgname{
+text-shadow: 5px 5px 0px #000000;
+font-family: univers;
+font-size: 100px;
+text-transform: uppercase;
+color: #e20500;
 }
