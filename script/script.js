@@ -18,9 +18,10 @@ function callbackFunc() {
 }
 }
 window.onresize = function(event) {
-  $( "#twitch-embed", $( "iframe" ).height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight));
-    $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
-    $( "#spotifyframe").height("80px");
+  $( "#twitch-embed", $( "iframe" ).height(document.documentElement.clientHeight - document.getElementById('introtext').clientHeight -57));
+    $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('introtext').clientHeight -57);
+    $( "#twitch-embed", $( "iframe" ).width(document.documentElement.clientWidth - document.getElementById('left').clientWidth));
+      $( "#twitch-embed").width(document.documentElement.clientWidth - document.getElementById('left').clientWidth);
 };
 
 
@@ -67,12 +68,3 @@ window.onresize = function(event) {
       } // End if
     });
   });
-//Scroll of the navbar
-jQuery("#buttondiv").draggable({
-    cursor: "move",
-    containment: "parent",
-    stop: function() {
-      if(jQuery("#buttondiv").position().left < 1)
-          jQuery("#buttondiv").css("left", "720px");
-    }
-});

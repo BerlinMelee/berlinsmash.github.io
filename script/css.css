@@ -1,9 +1,12 @@
 
 /*Dark Mode*/
 @media (prefers-color-scheme: dark) {
+  
+#bgimage{
+  background-image: url("../images/bg.png");
+}
   body{
-      background-color: #18181b;
-      background-image: url("../images/bg.png");
+    background-color: rgba(0, 0, 0, 0);
       background-repeat: repeat;
       color: white;
   }
@@ -45,10 +48,14 @@
 /*Light Mode*/
 
 @media (prefers-color-scheme: light) {
+  
+  
+#bgimage{
+  background-image: url("../images/bg_clear.png");
+}
   body{
     background-color: #ffffff;
     color: black;
-    background-image: url("../images/bg_clear.png");
   }
   ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1);
@@ -114,7 +121,6 @@ body{
   font-family: 'Rubik', sans-serif;
   margin: 0 0 0 0;
   font-size: 16px;
-  background-size: 40px 40px;
 }
 #articles{
   min-height: calc(100vh - 33px);
@@ -202,6 +208,7 @@ area{
     cursor: pointer;
     transition: box-shadow 0.2s;
     font-family: univers;
+    z-index: 100;
 }
 
 .button::-moz-focus-inner {
@@ -305,6 +312,8 @@ footer{
 h1{
   margin: 0 0 0 0;
   color: #e20500;
+  
+  text-shadow: 0 0 5px black;
 }
 .text{
    padding: 58px 0 0 0;
@@ -314,11 +323,115 @@ h1{
   margin-right: 3px;
 }
 #buttondiv{
-  width: calc(100vw - 64px);
+  max-width: calc(50vw - 20px);
   overflow-x: auto;
   overflow-y:hidden;
   white-space: nowrap;
 }
 #buttondiv::-webkit-scrollbar {
   display: none;
+}
+#logotext{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  z-index: 4;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+}
+#top{
+  padding: 56px 0 0 0;
+  height: calc(100vh - 56px);
+  display : inline-block;
+  width: 100%;
+  display: flex
+  ;
+}
+#left{
+  max-width: 33vw;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, .125);
+  border-right: 1px solid rgba(0, 0, 0, .5);
+  display: block;
+}
+#bgimage{
+  
+  z-index: -1;
+  width: 200%;
+  height: 200%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-size: 20vh 20vh;
+  animation-name: MOVE-BG;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes MOVE-BG {
+   from {
+     transform: translateX(0) translateY(0);
+   }
+   to { 
+     transform: translateX(-20vh) translateY(-20vh);
+   }
+}
+
+#logotext a{
+  color: #e20500;
+  font-size: 50px;
+  text-decoration: none;
+}
+#left a{
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 500 !important;
+  padding: 7px 0px;
+  background-color: rgba(0, 0, 0, .1);
+  border-bottom: #000000 1px solid;
+  font-family: univers;
+  color: #e20500;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#left a:hover,
+#left a:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#left a:hover::before {
+    opacity: 0.08;
+}
+
+#left a:focus::before {
+    opacity: 0.24;
+}
+
+#left a:hover:focus::before {
+    opacity: 0.3;
+}
+
+/* Active */
+#left a:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+#left a:active::after {
+    opacity: 0.32;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+#introtext{
+  text-align: center;
 }
