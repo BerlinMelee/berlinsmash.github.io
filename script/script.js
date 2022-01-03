@@ -18,13 +18,34 @@ function callbackFunc() {
 }
 }
 window.onresize = function(event) {
+  if(document.documentElement.clientWidth < 918){
+    $('#logotext').fadeOut(100);
+    $('#hamburger').fadeIn(100);
+    document.getElementById("left").style.minWidth = "0px";
+    document.getElementById("left").style.width = "0px";
+  }else{
+    $('#logotext').fadeIn(100);
+    if(window.scrollY < document.getElementById('top').clientHeight){
+      $('#hamburger').fadeOut(100);
+      document.getElementById("left").style.minWidth = "270px";
+      document.getElementById("left").style.width = "22vw";
+    }
+  }
   $( "#twitch-embed", $( "iframe" ).height(document.documentElement.clientHeight - document.getElementById('introtext').clientHeight -57));
-    $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('introtext').clientHeight -57);
-    $( "#twitch-embed", $( "iframe" ).width(document.documentElement.clientWidth - document.getElementById('left').clientWidth));
-      $( "#twitch-embed").width(document.documentElement.clientWidth - document.getElementById('left').clientWidth);
+  $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('introtext').clientHeight -57);
+  $( "#twitch-embed", $( "iframe" ).width(document.documentElement.clientWidth - document.getElementById('left').clientWidth));
+  $( "#twitch-embed").width(document.documentElement.clientWidth - document.getElementById('left').clientWidth);
 };
-
-
+window.onscroll = function(event){
+  if(window.scrollY >= document.getElementById('top').clientHeight || document.documentElement.clientWidth < 918){
+    $('#hamburger').fadeIn(100);
+  }
+  else{
+    $('#hamburger').fadeOut(100);
+  }
+}
+function onload(){
+}
   $(document).ready(function(){
     $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
     // Add smooth scrolling to all links

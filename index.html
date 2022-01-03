@@ -6,26 +6,28 @@
     </script>
     <script>
     </script>
+    <meta name="theme-color" content="#009879">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="mask-icon" href="images/logo.svg" color="blue">
-    <meta name="theme-color" content="#322f37">
+    <meta name="theme-color" content="#e20500">
     <link rel="stylesheet" href="script/css.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>BerlinSmash</title>
   </head>
-  <body>
+  <body onload="onload();">
   <div id="bgimage"></div>
     <nav id="nav">
-          <div class="spacer"> </div>
-          <div id="buttondiv">
-            <a class="button" href="./shop">Merch</a>
-            <a class="button" href="https://drive.google.com/open?id=1yRSG1r2u6zq04g6LOc8umx0B2izI2iU3">Slippi</a>
-            <a class="button" href="/live">Live</a>
-          </div>
-          <div id="logotext" class="bgname">
-           <a href="#top">BerlinSmash</a>
-          </div>
+      <a id="hamburger" onclick="navigation();">&#x2630;</a>
+        <div class="spacer"> </div>
+        <div id="buttondiv">
+          <a class="button" href="./shop">Merch</a>
+          <a class="button" href="https://drive.google.com/open?id=1yRSG1r2u6zq04g6LOc8umx0B2izI2iU3">Slippi</a>
+          <a class="button" href="/live">Live</a>
+        </div>
+        <div id="logotext" class="bgname">
+          <a href="#top">BerlinSmash</a>
+        </div>
     </nav>
     <div id="top">
       <div id="left">
@@ -45,6 +47,26 @@
     
       <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
+      <script>
+        
+        if(document.documentElement.clientWidth < 918){
+          $('#logotext').fadeOut(100);
+          document.getElementById("left").style.minWidth = "0px";
+          document.getElementById("left").style.width = "0px";
+        }
+        else{
+          $('#logotext').fadeIn(100);
+            document.getElementById("left").style.minWidth = "270px";
+            document.getElementById("left").style.width = "22vw";
+        }
+        
+      if(window.scrollY >= document.getElementById('top').clientHeight || document.documentElement.clientWidth < 918)
+          $('#hamburger').fadeIn(100);
+        
+        else
+          $('#hamburger').fadeOut(100);
+      
+            </script>
       <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
       <script type="text/javascript">
           var embed = new Twitch.Embed("twitch-embed", {
@@ -82,7 +104,18 @@
         </div>
     </div>
       <div class="text">
-        lorem ipsum
+        lorem ipsum&#x2630;<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
+        lorem ipsum<br>
       </div>
     </article>
     <article id="tournaments">
@@ -105,10 +138,9 @@
     </article>
   </div>
     <footer>
-      <span class="footer">Imprint</span>
+      <span class="footer">Contact</span>
       <span class="footer"><a href="mailto:berlin.melee@gmail.com">Mail</a></span>
       </footer>
-      
 
   </body>
 </html>

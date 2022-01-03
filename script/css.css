@@ -351,7 +351,6 @@ h1{
   ;
 }
 #left{
-  max-width: 22vw;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -360,7 +359,6 @@ h1{
   background-color: rgba(0, 0, 0, .125);
   border-right: 1px solid rgba(0, 0, 0, .5);
   display: block;
-  min-width: 270px;
 }
 #bgimage{
   
@@ -435,4 +433,67 @@ h1{
 }
 #introtext{
   text-align: center;
+}
+#hamburger{
+  font-size: 20px;
+  color: #e20500;
+  font-family: univers;
+  vertical-align: middle;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 900;
+  padding-left: 16px;
+  padding-right: 16px;
+  line-height: 40px;
+  z-index: 100;
+}
+.hide{
+  animation-name: hide;
+  animation-duration: .25s;
+  animation-timing-function: linear;
+  visibility: hidden;
+}
+
+@keyframes hide {
+  from{
+    opacity: 1;
+
+  }
+  to{
+    opacity: 0;
+  }
+  0%{
+    visibility: visible;
+
+  }
+  99%{
+    visibility: visible;
+  }
+  100%{
+    visibility: hidden;
+  }
+}
+.show{
+  animation-name: show;
+  animation-duration: .25s;
+  animation-timing-function: linear;
+  visibility: visible;
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+
+  }
+  to{
+    opacity: 1;
+  }
+  0%{
+    visibility: hidden;
+
+  }
+  1%{
+    visibility: visible;
+  }
 }
