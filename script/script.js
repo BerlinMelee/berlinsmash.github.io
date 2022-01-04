@@ -20,11 +20,13 @@ function callbackFunc() {
 window.onresize = function(event) {
   if(document.documentElement.clientWidth < 918){
     $('#logotext').fadeOut(100);
+    $('#logo').fadeIn(100);
     $('#hamburger').fadeIn(100);
     document.getElementById("left").style.minWidth = "0px";
     document.getElementById("left").style.width = "0px";
   }else{
     $('#logotext').fadeIn(100);
+    $('#logo').fadeOut(100);
     if(window.scrollY < document.getElementById('top').clientHeight){
       $('#hamburger').fadeOut(100);
       document.getElementById("left").style.minWidth = "270px";
@@ -44,48 +46,3 @@ window.onscroll = function(event){
     $('#hamburger').fadeOut(100);
   }
 }
-function onload(){
-}
-  $(document).ready(function(){
-    $( "#twitch-embed").height(document.documentElement.clientHeight - document.getElementById('twitchbg').clientHeight);
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-
-        // Store hash
-        var hash = this.hash;
-
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
-    });
-    // Add smooth scrolling to all links
-    $("area").on('click', function(event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-        // Store hash
-        var hash = this.hash;
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
-    });
-  });

@@ -6,7 +6,6 @@
     </script>
     <script>
     </script>
-    <meta name="theme-color" content="#009879">
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="mask-icon" href="images/logo.svg" color="blue">
     <meta name="theme-color" content="#e20500">
@@ -15,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>BerlinSmash</title>
   </head>
-  <body onload="onload();">
+  <body onload="init();">
   <div id="bgimage"></div>
     <nav id="nav">
       <a id="hamburger" onclick="navigation();">&#x2630;</a>
@@ -28,6 +27,10 @@
         <div id="logotext" class="bgname">
           <a href="#top">BerlinSmash</a>
         </div>
+        <img src="images/logo.svg" type="image/svg+xml" alt="logo" height="40x" width="40px" usemap="#logomap" id="logo">
+        <map name="logomap">
+          <area shape="circle" coords="20,20,20" href="#top" alt="Logo">
+        </map>
     </nav>
     <div id="top">
       <div id="left">
@@ -51,11 +54,13 @@
         
         if(document.documentElement.clientWidth < 918){
           $('#logotext').fadeOut(100);
+          $('#logo').fadeIn(100);
           document.getElementById("left").style.minWidth = "0px";
           document.getElementById("left").style.width = "0px";
         }
         else{
           $('#logotext').fadeIn(100);
+          $('#logo').fadeOut(100);
             document.getElementById("left").style.minWidth = "270px";
             document.getElementById("left").style.width = "22vw";
         }
@@ -84,7 +89,7 @@
 
     <div id="articles">
     <article id="discord">
-      <div id="intro" class="bg">
+      <div id="community" class="bg">
         <div class="bg_image">
           <center>
             <span class="bgname">Connect to our Community</span>
@@ -138,8 +143,11 @@
     </article>
   </div>
     <footer>
-      <span class="footer">Contact</span>
-      <span class="footer"><a href="mailto:berlin.melee@gmail.com">Mail</a></span>
+      <center><h1>Contact</h1></center>
+      Jonas Hartmer<br>
+      Kopenhagener Str. 1<br>
+      13407 Berlin<br>
+      <span class="footer"><a href="mailto:berlin.melee@gmail.com">E-Mail: smash.melee@gmail.com</a></span>
       </footer>
 
   </body>

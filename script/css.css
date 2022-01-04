@@ -12,6 +12,7 @@
   }
   ::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(9,10,11,1);
+      box-shadow: inset 0 0 6px rgba(9,10,11,1);
       background-color: #1d1e1c;
   }
 
@@ -28,14 +29,6 @@
   #nav{
     background-color: rgba(16, 16, 16, .5);
     border-bottom: 1px solid black;
-  }
-  footer{
-    background-color: rgba(0, 0, 0, .5);
-    border-top: 1px solid black;
-    color: white;
-  }
-  footer a{
-  color: white;
   }
   .spacer{
     background: black;
@@ -59,6 +52,7 @@
   }
   ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,1);
+    box-shadow: inset 0 0 6px rgba(255,255,255,1);
     background-color: #e2e1e3;
   }
 
@@ -75,14 +69,6 @@
   #nav{
     background-color: rgba(239, 239, 239, .5);
     border-bottom: 1px solid white;
-  }
-  footer{
-    background-color: rgba(255, 255, 255, .5);
-    border-top: 1px solid white;
-    color: black;
-  }
-  footer a{
-  color: black;
   }
   .spacer{
     background: white;
@@ -121,6 +107,7 @@ body{
   font-family: 'Rubik', sans-serif;
   margin: 0 0 0 0;
   font-size: 16px;
+  overflow-x: hidden;
 }
 #articles{
   min-height: calc(100vh - 33px);
@@ -144,8 +131,8 @@ nav{
   max-height: 80px;
   max-width: 100%;
 }
-#intro{
-  background-image: url(../images/dreamland.png);
+#community{
+  background-image: url(../images/community.jpg);
 }
 #gamesbg{
   background-image: url(../images/smashbros.png);
@@ -164,8 +151,8 @@ nav{
 
 }
 .bg_image{
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   padding: 56px 0 0 0;
 }
 
@@ -177,11 +164,6 @@ fieldset{
 
 area{
   outline: none;
-}
-.footer{
-  width: auto;
-  height: auto;
-  margin-right: 10px;
 }
 
 .button {
@@ -290,8 +272,12 @@ area{
 }
 footer{
   width: 100%;
-  font-size: 10px;
   min-height: 30px;
+  color: white;
+  background-color: black;
+}
+footer a{
+  color: white;
 
 }
 .bgname{
@@ -309,6 +295,11 @@ footer{
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
+@media screen and (max-width: 894px) {
+  .bgname {
+  font-size: 11.17vw;
+  }
+  }
 h1{
   margin: 0 0 0 0;
   color: #e20500;
@@ -341,6 +332,16 @@ h1{
   width: 100%;
   text-align: center;
   line-height: 40px;
+}
+#logo{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  z-index: 4;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  display: none;
 }
 #top{
   padding: 56px 0 0 0;
