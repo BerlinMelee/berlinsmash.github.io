@@ -35,6 +35,8 @@
   }
   .spacer{
     background: black;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
   .button{
     background-color: rgba(0, 0, 0, .5);
@@ -124,12 +126,13 @@ nav{
 -webkit-backdrop-filter: blur(10px);
   vertical-align: baseline;
   display:inline-flex;
-  height: 40px;
+  height: 56px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   position: fixed;
   width: 100%;
   color: white;
   top:0px;
-  padding: 8px 0;
   z-index: 99;
   margin:0;
   overflow: hidden;
@@ -327,6 +330,7 @@ h1{
   overflow-y:hidden;
   white-space: nowrap;
   z-index: 100;
+  padding-top: 8px;
 }
 #buttondiv::-webkit-scrollbar {
   display: none;
@@ -343,14 +347,9 @@ h1{
   line-height: 40px;
 }
 #logo{
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
   z-index: 4;
-  position: absolute;
-  top: 5px;
-  width: 100%;
   display: none;
+  top: 0px;
 }
 #top{
   padding: 56px 0 0 0;
@@ -453,10 +452,11 @@ h1{
   text-decoration: none;
   cursor: pointer;
   font-weight: 900;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
   line-height: 40px;
   z-index: 100;
+  padding-top: 8px;
 }
 .hide{
   animation-name: hide;
@@ -515,8 +515,8 @@ h1{
   background-image: url(../images/history.png);
 }
 .youtube{
-  width: 20vw;
-  height: calc(20vw * 0.5625);
+  width: 46vw;
+  height: calc(46vw * 0.5625);
   border: 1px black solid;
   background-size: cover;
 
@@ -532,7 +532,7 @@ h1{
   opacity: 0;
   transition: 0.3s;
   text-align: center;
-  font-size: 2vw;
+  font-size: 5vw;
   vertical-align: middle;
   line-height: 10vw;
   
