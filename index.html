@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>BerlinSmash</title>
   </head>
-  <body onload="init();">
+  <body>
   <div id="bgimage"></div>
     <nav id="nav">
       <a id="hamburger" onclick="navigation();">&#x2630;</a>
@@ -66,12 +66,14 @@
           $('#logo').fadeIn(100);
           document.getElementById("left").style.minWidth = "0px";
           document.getElementById("left").style.width = "0px";
+    document.getElementById("left").style.borderWidth = "0px 0px 0px 0px";
         }
         else{
           $('#logotext').fadeIn(100);
           $('#logo').fadeOut(100);
             document.getElementById("left").style.minWidth = "270px";
             document.getElementById("left").style.width = "22vw";
+      document.getElementById("left").style.borderWidth = "0px 1px 0px 0px";
         }
         
       if(window.scrollY >= document.getElementById('top').clientHeight || document.documentElement.clientWidth < 918)
@@ -84,8 +86,8 @@
       <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
       <script type="text/javascript">
           var embed = new Twitch.Embed("twitch-embed", {
-            width: document.documentElement.clientWidth - document.getElementById('left').clientWidth,
             height: document.documentElement.clientHeight - document.getElementById('introtext').clientHeight -57,
+            width: document.documentElement.clientWidth - document.getElementById('left').clientWidth - parseFloat(window.getComputedStyle(document.getElementById('left')).borderRightWidth),
             channel: "berlinsmash",
             autoplay: true,
             layout: "video"
