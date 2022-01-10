@@ -6,8 +6,10 @@
     </script>
     <script>
     </script>
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
-    <link rel="mask-icon" href="images/logo.svg" color="blue">
+    <link rel="shortcut icon" href="/images/logo.ico" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/images/logo.ico">
+    <link rel="icon" type="image/x-icon" href="/images/logo.ico">
+    <link rel="icon" href="/images/logo.ico"/>
     <meta name="theme-color" content="#e20500">
     <link rel="stylesheet" href="script/css.css">
     <meta charset="utf-8">
@@ -17,7 +19,22 @@
   <body>
   <div id="bgimage"></div>
     <nav id="nav">
-      <a id="hamburger" onclick="navigation();">&#x2630;</a>
+      <div class="menu-btn">
+        <div class="menu-btn__burger" onclick="navigation()"></div>
+      </div>
+      <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        let menuOpen = false;
+          menuBtn.addEventListener('click', () => {
+          if(!menuOpen) {
+            menuBtn.classList.add('open');
+            menuOpen = true;
+          } else {
+            menuBtn.classList.remove('open');
+            menuOpen = false;
+          }
+          });
+      </script>
         <div class="spacer"> </div>
         <div id="buttondiv">
           <img src="images/merch.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#merchmap" class="buttonsvg" style="margin-right: 2px;">
@@ -40,12 +57,24 @@
         <div id="logotext" class="bgname">
           <a href="#top">BerlinSmash</a>
         </div>
+        <div id="buttondiv2">
+          <img src="images/yt.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#ytmap" class="buttonsvg" style="margin-left: 2px;">
+          <map name="ytmap">
+            <area shape="circle" coords="20,20,20" href="https://www.youtube.com/channel/UCxgMq9tnZtwZFwFiPBeT93A" alt="Live" target="_blank" rel="noopener noreferrer">
+          </map>
+          <img src="images/twitter.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#twittermap" class="buttonsvg" style="margin-left: 2px;">
+          <map name="twittermap">
+            <area shape="circle" coords="20,20,20" href="https://twitter.com/Berlin_Smash" alt="Live" target="_blank" rel="noopener noreferrer">
+          </map>
+        </div>
+
+        </div>
     </nav>
     <div id="top">
       <div id="left">
         <a href="#discord">Connect to the Community</a>
-        <a href="#youtube">Youtube Playlists</a>
         <a href="#tournaments">Tournaments</a>
+        <a href="#youtube">Youtube Playlists</a>
         <a href="#team">Our Team</a>
       </div>
       <div id="right">
@@ -108,8 +137,41 @@
         </div>
       </div>
       <div class="text">
+        <div style=" flex-shrink: 0; width: 100%;">
+          <center>
+            Here You can connect to people and get the newest Information.
+          </center>
+        </div>
+        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/AAb4JrK">
+          <div id="discordyt" class="youtube">
+           <div>Discord</div>
+         </div>
+        </a>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/groups/BerlinMelee/">
+          <div id="twitchyt" class="youtube">
+           <div>Facebook (inactive)</div>
+         </div>
+        </a>
       </div>
       </ul>
+    </article>
+    <article id="tournaments">
+      <div id="tournamentsbg" class="bg">
+        <div class="bg_image">
+          <center>
+            <span class="bgname">Tournaments</span>
+          </center>
+        </div>
+        </div>
+      <div class="text">
+        <div style=" flex-shrink: 0; width: 100%;">
+          <center>
+            <h1>
+              Upcoming Tournaments
+            </h1>
+          </center>
+        </div>
+      </div>
     </article>
     <article id="youtube">
       <div id="youtubebg" class="bg">
@@ -131,15 +193,6 @@
          </div>
         </a>
       </div>
-    </article>
-    <article id="tournaments">
-      <div id="tournamentsbg" class="bg">
-        <div class="bg_image">
-          <center>
-            <span class="bgname">Tournaments</span>
-          </center>
-        </div>
-    </div>
     </article>
     <article id="team">
       <div id="teambg" class="bg">

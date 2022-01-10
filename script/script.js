@@ -1,3 +1,4 @@
+
 window.onresize = function(event) {
   if($(window).width() < 918){
     $('#logotext').fadeOut(100);
