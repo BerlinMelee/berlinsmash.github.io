@@ -72,3 +72,8 @@ window.addEventListener('load', function () {
   $( "#twitch-embed", $( "iframe" ).width($(window).width() - document.getElementById('left').clientWidth - parseFloat(window.getComputedStyle(document.getElementById('left')).borderRightWidth)));
   $( "#twitch-embed", $( "iframe" ).height($(window).height() - document.getElementById('introtext').clientHeight -57));
 });
+fetch('https://berlinsmash.ddns.net:8081/0/1')
+    .then(res => res.json())
+    .then(res => {
+        console.log(res);
+    });

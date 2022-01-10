@@ -654,7 +654,7 @@ a{
   background: #e20500;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  transition: all .5s ease-in-out;
+  transition: all .1s ease-in-out;
   z-index: 100;
 }
 .menu-btn__burger::before,
@@ -666,7 +666,7 @@ a{
   background: #e20500;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  transition: all .5s ease-in-out;
+  transition: all .1s ease-in-out;
 }
 .menu-btn__burger::before {
   transform: translateY(-9px);
