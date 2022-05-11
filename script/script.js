@@ -102,7 +102,7 @@ $(document).ready(function() {
   }
 });
 function upcoming(number){
-  fetch('https://berlinsmash.ddns.net/getSmashGG/1/' + number)
+  fetch('https://cors-anywhere.herokuapp.com/https://berlinsmash.ddns.net/getSmashGG/1/' + number)
   .then(res => res.json())
   .then(res => {
       res.data.tournaments.nodes.forEach(element => {
@@ -125,7 +125,7 @@ function upcoming(number){
   });
 }
 function past(number){
-  fetch('https://berlinsmash.ddns.net/getSmashGG/0/' + number)
+  fetch('https://cors-anywhere.herokuapp.com/https://berlinsmash.ddns.net/getSmashGG/0/' + number)
   .then(res => res.json())
   .then(res => {
     res.data.tournaments.nodes.forEach(element => {
