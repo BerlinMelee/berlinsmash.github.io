@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "BerlinSmash Stream Server",
+  "license": "MIT",
+  "author": "Oolonk",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-fetch": "2.0",
+    "ws": "^8.4.0"
+  }
+}

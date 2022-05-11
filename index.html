@@ -2,11 +2,7 @@
 <html lang="en" dir="ltr" style="width: 100%">
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="script/script.js">
-    </script>
-    <script>
-    </script>
-    access
+    <script src="script/script.js"></script>
     <link rel="shortcut icon" href="/images/logo.ico" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="/images/logo.ico">
     <link rel="icon" type="image/x-icon" href="/images/logo.ico">
@@ -14,51 +10,45 @@
     <meta name="theme-color" content="#e20500">
     <link rel="stylesheet" href="script/css.css">
     <meta charset="utf-8">
+    <meta name="description" content="Website of the Berlin Super Smash Bros. Melee Community">
+    <meta name="author" content="Jonas Hartmer">
+    <meta name="keywords" content="BerlinSmash, SSBM, Melee, Super Smash Bros, Berlin">
+    <meta property="og:image" content="images/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta property="og:site_name" content="BerlinSmash">
+    <meta name="twitter:site" content="@berlin_smash">
+    <meta property="og:url" content="https://www.berlinsmash.ddns.net" />
+    <meta property="og:locale" content="en_US" />
     <title>BerlinSmash</title>
   </head>
   <body>
-  <div id="bgimage"></div>
+    <div id="bgimage"></div>
     <nav id="nav">
-      <div class="menu-btn">
-        <div class="menu-btn__burger" onclick="navigation()"></div>
+      <div class="menu-btn" id="menu-btn">
+        <div class="menu-btn__burger" onclick="navigation(menuOpen)"></div>
       </div>
       <script>
-        const menuBtn = document.querySelector('.menu-btn');
-        let menuOpen = false;
-          menuBtn.addEventListener('click', () => {
-          if(!menuOpen) {
-            menuBtn.classList.add('open');
-            menuOpen = true;
-          } else {
-            menuBtn.classList.remove('open');
-            menuOpen = false;
-          }
-          });
       </script>
-        <div class="spacer"> </div>
+      <div id="logotext" class="bgname">
+        <a href="#top">BerlinSmash</a>
+      </div>
+    </nav>
+    <div id="top">
+      <div id="left">
+        <a href="#discord">Connect to the Community</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#youtube">Youtube Playlists</a>
+        <a href="#team">Our Team</a>
+        <a href="#resources">Resources</a>
         <div id="buttondiv">
           <img src="images/merch.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#merchmap" class="buttonsvg" style="margin-right: 2px;">
           <map name="merchmap">
             <area shape="circle" coords="20,20,20" href="./shop" alt="Merch" target="_blank" rel="noopener noreferrer">
           </map>
-          <img src="images/slippi.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#slippimap" class="buttonsvg" style="margin-right: 2px;">
-          <map name="slippimap">
-            <area shape="circle" coords="20,20,20" href="https://drive.google.com/open?id=1yRSG1r2u6zq04g6LOc8umx0B2izI2iU3" alt="Slippi" target="_blank" rel="noopener noreferrer">
-          </map>
           <img src="images/twitch.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#livemap" class="buttonsvg" style="margin-right: 2px;">
           <map name="livemap">
             <area shape="circle" coords="20,20,20" href="./live" alt="Live" target="_blank" rel="noopener noreferrer">
           </map>
-        </div>
-        <img src="images/logo.svg" type="image/svg+xml" alt="logo" height="57px" usemap="#logomap" id="logo" class="buttonsvg">
-        <map name="logomap">
-          <area shape="circle" coords="20,20,20" href="#top" alt="Logo">
-        </map>
-        <div id="logotext" class="bgname">
-          <a href="#top">BerlinSmash</a>
-        </div>
-        <div id="buttondiv2">
           <img src="images/yt.svg" type="image/svg+xml" alt="logo" height="40px" width="40px" usemap="#ytmap" class="buttonsvg" style="margin-left: 2px;">
           <map name="ytmap">
             <area shape="circle" coords="20,20,20" href="https://www.youtube.com/channel/UCxgMq9tnZtwZFwFiPBeT93A" alt="Live" target="_blank" rel="noopener noreferrer">
@@ -68,15 +58,6 @@
             <area shape="circle" coords="20,20,20" href="https://twitter.com/Berlin_Smash" alt="Live" target="_blank" rel="noopener noreferrer">
           </map>
         </div>
-
-        </div>
-    </nav>
-    <div id="top">
-      <div id="left">
-        <a href="#discord">Connect to the Community</a>
-        <a href="#tournaments">Tournaments</a>
-        <a href="#youtube">Youtube Playlists</a>
-        <a href="#team">Our Team</a>
       </div>
       <div id="right">
       <div id="introtext">
@@ -90,27 +71,11 @@
       <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
       <script>
-        
-        if(document.documentElement.clientWidth < 918){
-          $('#logotext').fadeOut(100);
-          $('#logo').fadeIn(100);
-          document.getElementById("left").style.minWidth = "0px";
-          document.getElementById("left").style.width = "0px";
-    document.getElementById("left").style.borderWidth = "0px 0px 0px 0px";
-        }
-        else{
-          $('#logotext').fadeIn(100);
-          $('#logo').fadeOut(100);
-            document.getElementById("left").style.minWidth = "270px";
-            document.getElementById("left").style.width = "22vw";
-      document.getElementById("left").style.borderWidth = "0px 1px 0px 0px";
-        }
-        
       if(window.scrollY >= document.getElementById('top').clientHeight || document.documentElement.clientWidth < 918)
-          $('#hamburger').fadeIn(100);
+          $('.menu-btn').fadeIn(100);
         
         else
-          $('#hamburger').fadeOut(100);
+          $('.menu-btn').fadeOut(100);
       
             </script>
       <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
@@ -127,91 +92,134 @@
     </div>
     </div>
 
-
     <div id="articles">
-    <article id="discord">
-      <div id="community" class="bg">
-        <div class="bg_image">
-          <center>
-            <span class="bgname">Connect to our Community</span>
-          </center>
+      <article id="discord">
+        <div id="community" class="bg">
+          <div class="bg_image">
+            <center>
+              <span class="bgname">Connect to our Community</span>
+            </center>
+          </div>
         </div>
+        <div class="text">
+          <div style=" flex-shrink: 0; width: 100%;">
+            <center>
+              Here You can connect to people and get the newest Information.
+            </center>
+          </div>
+          <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/AAb4JrK">
+            <div id="discordyt" class="youtube">
+            <div>Discord</div>
+          </div>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/groups/BerlinMelee/">
+            <div id="facebookyt" class="youtube">
+            <div>Facebook (inactive)</div>
+          </div>
+          </a>
+        </div>
+        </ul>
+      </article>
+      <article id="tournaments">
+        <div id="tournamentsbg" class="bg">
+          <div class="bg_image">
+            <center>
+              <span class="bgname">Tournaments</span>
+            </center>
+          </div>
+          </div>
+        <div class="text">
+          <div style=" flex-shrink: 0; width: 100%;">
+            <center>
+              <h1>
+                Upcoming Tournaments
+              </h1>
+            </center>
+          </div>
+          <div id="upcomingTournaments"></div>
+          <center><a class="button" href="javascript:upcoming(upcomingPage);" id="upcomingButton">Load More</a></center><br>
+          
+        <center style=" flex-shrink: 0; width: 100%;">
+          <h1>
+            Past Tournaments
+          </h1>
+        </center>
+        <div id="pastTournaments"></div>
+        <center style=" flex-shrink: 0; width: 100%;"><a class="button" href="javascript:past(pastPage);" id="pastButton">Load More</a></center>
+      </div>
+      </article>
+      <article id="youtube">
+        <div id="youtubebg" class="bg">
+          <div class="bg_image">
+            <center>
+              <span class="bgname">YouTube Playlists</span>
+            </center>
+          </div>
+      </div>
+        <div class="text">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=C9rerhpzodQ&list=PLMtlSb-32rjsW2wPzWkeOJhH9h5WdHHyZ">
+            <div id="slippiyt" class="youtube">
+            <div>Slippi Combo Video</div>
+          </div>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=Wzl2FtriVSg&list=PLMtlSb-32rjvwzqhxhmpBWbr2Tx3Sg_rb">
+            <div id="history" class="youtube">
+            <div>History Month</div>
+          </div>
+          </a>
+        </div>
+      </article>
+      <article id="team">
+        <div id="teambg" class="bg">
+          <div class="bg_image">
+            <center>
+              <span class="bgname">Our Team</span>
+            </center>
+          </div>
       </div>
       <div class="text">
         <div style=" flex-shrink: 0; width: 100%;">
-          <center>
-            Here You can connect to people and get the newest Information.
-          </center>
         </div>
-        <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/AAb4JrK">
-          <div id="discordyt" class="youtube">
-           <div>Discord</div>
-         </div>
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/groups/BerlinMelee/">
-          <div id="twitchyt" class="youtube">
-           <div>Facebook (inactive)</div>
-         </div>
-        </a>
-      </div>
-      </ul>
-    </article>
-    <article id="tournaments">
-      <div id="tournamentsbg" class="bg">
-        <div class="bg_image">
-          <center>
-            <span class="bgname">Tournaments</span>
-          </center>
+      </article>
+      
+      <article id="resources">
+        <div id="resourcesbg" class="bg">
+          <div class="bg_image">
+            <center>
+              <span class="bgname">Resources</span>
+            </center>
+          </div>
         </div>
+        <div class="text">
+          <div style=" flex-shrink: 0; width: 100%;">
+            <center>
+              
+            </center>
+          </div>
+          <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/drive/u/2/folders/1yRSG1r2u6zq04g6LOc8umx0B2izI2iU3?usp=drive_open">
+            <div id="replayyt" class="youtube">
+            <div>Slippi Replays</div>
+          </div>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/groups/BerlinMelee/">
+            <div id="isoyt" class="youtube">
+            <div>Custom ISO</div>
+          </div>
+          <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/drive/folders/1Kka3JTDoB9QBuFKDYZcz4FaMVTE0i_Jd?usp=sharing">
+            <div id="iconyt" class="youtube">
+            <div>Brand Assets</div>
+          </div>
+          </a>
         </div>
-      <div class="text">
-        <div style=" flex-shrink: 0; width: 100%;">
-          <center>
-            <h1>
-              Upcoming Tournaments
-            </h1>
-          </center>
-        </div>
-      </div>
-    </article>
-    <article id="youtube">
-      <div id="youtubebg" class="bg">
-        <div class="bg_image">
-          <center>
-            <span class="bgname">YouTube Playlists</span>
-          </center>
-        </div>
+        </ul>
+      </article>
     </div>
-      <div class="text">
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=C9rerhpzodQ&list=PLMtlSb-32rjsW2wPzWkeOJhH9h5WdHHyZ">
-          <div id="slippiyt" class="youtube">
-           <div>Slippi Combo Video</div>
-         </div>
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=Wzl2FtriVSg&list=PLMtlSb-32rjvwzqhxhmpBWbr2Tx3Sg_rb">
-          <div id="history" class="youtube">
-           <div>History Month</div>
-         </div>
-        </a>
-      </div>
-    </article>
-    <article id="team">
-      <div id="teambg" class="bg">
-        <div class="bg_image">
-          <center>
-            <span class="bgname">Our Team</span>
-          </center>
-        </div>
-    </div>
-    </article>
-  </div>
     <footer>
       <center><h1>Contact</h1></center>
       Jonas Hartmer<br>
       Kopenhagener Str. 1<br>
       13407 Berlin<br>
       <span class="footer"><a href="mailto:berlin.melee@gmail.com">E-Mail: smash.melee@gmail.com</a></span>
-      </footer>
-
+    </footer>
   </body>
 </html>
